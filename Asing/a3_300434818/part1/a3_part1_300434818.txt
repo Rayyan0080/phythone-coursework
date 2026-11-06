@@ -1,0 +1,64 @@
+************************************************
+*                                             *
+* __Welcome to my increasing-splits tester__  *
+*                                             *
+************************************************
+*********************************************************************
+*                                                                   *
+* __Doctor Avrana Kern, welcome to my increasing-splits tester.__  *
+*                                                                   *
+*********************************************************************
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 12311234
+Input the split. The split has to divide the length of 12311234 i.e. 8
+2
+12, 31, 12
+The sequence is not increasing
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 12311234
+Input the split. The split has to divide the length of 12311234 i.e. 8
+4
+1231, 1234
+The sequence is increasing
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 0012311234
+Input the split. The split has to divide the length of 0012311234 i.e. 10
+2
+00, 12, 31, 12
+The sequence is not increasing
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 0012311234
+Input the split. The split has to divide the length of 0012311234 i.e. 10
+5
+00123, 11234
+The sequence is increasing
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 1
+Input the split. The split has to divide the length of 1 i.e. 1
+1
+1
+The sequence is increasing
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 734
+Input the split. The split has to divide the length of 734 i.e. 3
+1
+7, 3
+The sequence is not increasing
+Doctor Avrana Kern, would you like to test if a number admits an increasing-split of give size? yes
+Good choice!
+Enter a positive integer: 734
+Input the split. The split has to divide the length of 734 i.e. 3
+3
+734
+The sequence is increasing
+**************************************
+*                                    *
+* __Good bye Doctor Avrana Kern!__  *
+*                                    *
+**************************************

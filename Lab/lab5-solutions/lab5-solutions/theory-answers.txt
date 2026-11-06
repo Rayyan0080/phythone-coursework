@@ -1,0 +1,39 @@
+
+**********************************************************************
+Task 5:
+
+The for loop itself is entered (executed) 3+13=16 times. Each the
+program enters the for loop it prints 3 stars. Thus the answer is  3*16=48
+
+
+****************************************************************************************
+
+Prog exercise 2:
+
+To test if a given number is perfect takes roughly n iterations of a
+loop. Thus to test all numbers n in the range [1, N], it takes roungly
+N^2 operations. Now if we plug in N=34,000,000 and see how much N^2
+is, and then divide by billion we get the number of seconds it would
+take. Converting that to min, hours, ... It turns out to be roughly
+6-15 days. ( If I computed it correctly.)
+
+To find 6th perfect number we would have to plug in about 8 billion for N. In that case the same calcuation gives that we would have to wait more than a year for our program to print 6th perfect number.  
+
+
+*******************************************************************************
+Programming exercise 3b
+
+What is important here to figure out before starting to code is that:
+
+1) a list is sorted (in non-decreasing order) IF AND ONLY IF every
+pair of consecutive elements is in order (i.e if every pair of
+consecutive elements is sorted)
+
+2. Equally a list is sorted if and only if there exist no pair
+of consecutive elements that are out of order (i.e. not sorted).
+
+Then you should think about how to design if statement. It is easier to use 2nd
+observation. Here is why. If an out of order pair is found, we immediately
+know the answer and can stop looping and return the result.
+
+

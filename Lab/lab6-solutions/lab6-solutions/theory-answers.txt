@@ -1,0 +1,24 @@
+
+
+
+***************************************************************
+
+Task 3:
+Question 1: prints 5
+Question 2: it finds the maximum number of all numbers the user
+entered before entering zero
+
+***************
+Task 4:
+Zero times
+
+the condition in if stmt is never true, as 10 is never different from
+10
+
+*************
+Task 5:
+
+prints:
+
+True False
+dong!

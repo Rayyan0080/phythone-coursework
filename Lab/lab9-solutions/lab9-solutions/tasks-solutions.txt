@@ -1,0 +1,46 @@
+Task 1:
+
+foo1: O(log_2 n)
+foo2:  O(log_2 n)
+foo3:  O(n)
+foo4:  O(n)
+foo5:  O(n^2)
+foo6:  O(n^3)
+foo7: O(n log n)
+
+Task 2:
+1. 3
+2. counts the number of unique elements in L (i.e. elements that
+appear exactlly once)
+3. d (since that line is executed n^2 times, thus 1000^2=million)
+4. O(n^2)
+
+Task 4: the one at the highest index is found.
+
+Task 5: hopefully their implenetation runs in O(n) time. This just
+goes through the list.
+
+Task 6: You need to do at least, rouhghly, log_2 n searches before it
+makes sense to sort.
+
+Task 7:
+
+[6, 5, 4, 3, 7, 1, 2]
+[1, 5, 4, 3, 7, 6, 2]
+[1, 2, 4, 3, 7, 6, 5]
+[1, 2, 3, 4, 7, 6, 5]
+[1, 2, 3, 4, 5, 6, 7]
+# Because selection sort doesn't stop even though the list is sorted,
+# there is one more iteration.
+[1, 2, 3, 4, 5, 6, 7]
+
+Task 8.  If the list is sorted in
+the wrong order largest to smallest, then this does cubic number of
+operatins, O(n^3). The reason is that the while loop will be executed
+O(n^2) times. In particular, just to bring min to the first spot takes O(n) iterations of
+the while loop. And then we end up with [min, subliste sorted in the
+wrong order] ... and now repeat.
+So O(n^2) iterations of the while loop times O(n) for the cost of call
+to min that we do every time in the while loops, gives O(n^3)
+solution.
+

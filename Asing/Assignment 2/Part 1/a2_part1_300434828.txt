@@ -1,0 +1,26 @@
+*******************************************
+*                                         *
+* __Welcome to my math quiz-generator__   *
+*                                         *
+*******************************************
+What is your name? Rayyan
+Hi Rayyan. Are you in? Enter
+1 for elementary school
+2 for high school or
+3 or other character(s) for none of the above?
+1
+****************************************************************************
+* __Rayyan, welcome to my quiz-generator for elementary school students.__ *
+****************************************************************************
+Rayyan, what would you like to practice? Enter
+0 for inverse of exponentiation
+1 for exponentiation
+1
+How many practice questions would you like to do? Enter 0, 1, or 2: 2
+Here is your 2 questions:
+Question 1:
+What is the result of 2^0? 2
+Question 2:
+What is the result of 2^7? 3
+I think you need some more practice Rayyan.
+Good bye Rayyan!

@@ -1,0 +1,260 @@
+# 1. Function to sum all odd divisors of n
+def sum_odd_divisors(n):
+    """
+    Returns the sum of all positive odd divisors of n.
+    If n is zero, returns None.
+    """
+    if n == 0:
+        return None
+    n = abs(n)  # Convert to positive for consistent results
+    total_sum = 0
+    for i in range(1, n + 1, 2):  # Loop through odd numbers only
+        if n % i == 0:
+            total_sum += i
+    return total_sum
+
+
+# 2. Function to compute the sum of a series based on user input
+def series_sum():
+    """
+    Prompts user to input a non-negative integer and returns the sum of the series:
+    1000 + 1/1^2 + 1/2^2 + ... + 1/n^2.
+    Returns None if input is negative.
+    """
+    n = int(input("Please enter a non-negative integer: "))
+    if n < 0:
+        return None
+    total_sum = 1000
+    for i in range(1, n + 1):
+        total_sum += 1 / (i ** 2)
+    return total_sum
+
+
+# 3. Function to calculate the nth Pell number
+def pell(n):
+    """
+    Returns the nth Pell number. Returns None if n is negative.
+    Pell numbers are defined as:
+        P(0) = 0
+        P(1) = 1
+        P(n) = 2*P(n-1) + P(n-2) for n > 1
+    """
+    if n < 0:
+        return None
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        prev2, prev1 = 0, 1
+        for i in range(2, n + 1):
+            current = 2 * prev1 + prev2
+            prev2, prev1 = prev1, current
+        return current
+
+
+# 4. Function to count extraordinary characters in a string
+def countMembers(s):
+    """
+    Counts how many extraordinary characters are in string s.
+    Extraordinary characters are:
+    - Lowercase letters 'e' to 'j' (inclusive)
+    - Uppercase letters 'F' to 'X' (inclusive)
+    - Numerals '2' to '6' (inclusive)
+    - Special characters: '!', ',', and '\\'
+    """
+    count = 0
+    for char in s:
+        if 'e' <= char <= 'j' or 'F' <= char <= 'X' or '2' <= char <= '6' or char in ['!', ',', '\\']:
+            count += 1
+    return count
+
+
+# 5. Function to convert a string representing a number to an integer
+def casual_number(s):
+    """
+    Converts a string s representing a number with commas to an integer.
+    If the string is invalid, returns None.
+    """
+    try:
+        return int(s.replace(',', ''))
+    except ValueError:
+        return None
+
+
+# 6. Function to compute an alien number value based on a custom alien numeral system
+def alienNumbers(s):
+    """
+    Returns the numeric value represented by string s using the alien numbering system:
+    T = 1024, y = 598, ! = 121, a = 42, N = 6, U = 1.
+    """
+    total = 0
+    for char in s:
+        if char == 'T':
+            total += 1024
+        elif char == 'y':
+            total += 598
+        elif char == '!':
+            total += 121
+        elif char == 'a':
+            total += 42
+        elif char == 'N':
+            total += 6
+        elif char == 'U':
+            total += 1
+    return total
+
+
+# 7. Function to compute alien number value without using string methods
+def alienNumbersAgain(s):
+    """
+    Same as alienNumbers but written without using string methods.
+    """
+    total = 0
+    for char in s:
+        if char == 'T':
+            total += 1024
+        elif char == 'y':
+            total += 598
+        elif char == '!':
+            total += 121
+        elif char == 'a':
+            total += 42
+        elif char == 'N':
+            total += 6
+        elif char == 'U':
+            total += 1
+    return total
+
+
+# 8. Function to encrypt a string by reversing it and interleaving characters
+def encrypt(s):
+    """
+    Encrypts a string by reversing it and interleaving characters from both ends.
+    """
+    reversed_s = s[::-1]
+    result = ''
+    length = len(reversed_s)
+    for i in range((length + 1) // 2):
+        result += reversed_s[i]
+        if i != length - 1 - i:
+            result += reversed_s[length - 1 - i]
+    return result
+
+
+# 9. Function to insert 'O'/'P' between characters based on their case
+def oPify(s):
+    """
+    Inserts 'O'/'P' between consecutive characters based on their case.
+    If the first character is uppercase, insert 'O'; if lowercase, insert 'o'.
+    If the second character is uppercase, insert 'P'; if lowercase, insert 'p'.
+    """
+    result = ""
+    for i in range(len(s) - 1):
+        result += s[i]
+        if s[i].isalpha() and s[i+1].isalpha():
+            if s[i].isupper():
+                result += "O"
+            else:
+                result += "o"
+            if s[i+1].isupper():
+                result += "P"
+            else:
+                result += "p"
+    result += s[-1]  # Add the last character
+    return result
+
+
+# 10. Function to check if a string is nonrepetitive
+def nonrepetitive(s):
+    """
+    Returns True if string s is nonrepetitive, i.e., no consecutive repeated subwords.
+    """
+    length = len(s)
+    for i in range(1, length // 2 + 1):
+        for j in range(length - 2 * i + 1):
+            if s[j:j + i] == s[j + i:j + 2 * i]:
+                return False
+    return True
+
+
+# Running all provided test cases
+
+# 1. Test case 2.1 sum_odd_divisors
+print(sum_odd_divisors(-9))  # 13
+print(sum_odd_divisors(1))  # 1
+print(sum_odd_divisors(2))  # 1
+print(sum_odd_divisors(3))  # 4
+print(sum_odd_divisors(7))  # 8
+print(sum_odd_divisors(-2001))  # 2880
+
+# 2. Test case 2.2 series_sum (you will need to manually input values to test)
+# Uncomment and run the following lines to test interactively
+# print(series_sum())  # Expected 1000 or sum based on user input
+
+# 3. Test case 2.3 pell
+print(pell(0))  # 0
+print(pell(1))  # 1
+print(pell(2))  # 2
+print(pell(3))  # 5
+print(pell(-45))  # None
+print(pell(6))  # 70
+
+# 4. Test case 2.4 countMembers
+print(countMembers("\\"))  # 1
+print(countMembers("2'"))  # 1
+print(countMembers("1'"))  # 0
+print(countMembers("2aAb3?eE'_13"))  # 4
+print(countMembers("one, Two"))  # 3
+
+# 5. Test case 2.5 casual_number
+print(casual_number("251"))  # 251
+print(casual_number("1,aba,251"))  # None
+print(casual_number("1,251"))  # 1251
+print(casual_number("1251"))  # 1251
+print(casual_number("-97,251"))  # -97251
+print(casual_number("-97251"))  # -97251
+print(casual_number("-,,,,"))  # None
+print(casual_number("--97,251"))  # None
+print(casual_number("-"))  # None
+print(casual_number("-1,000,001"))  # -1000001
+print(casual_number("999,999,999,876"))  # 999999999876
+print(casual_number("-2"))  # -2
+
+# 6. Test case 2.6 alienNumbers
+print(alienNumbers("a!ya!U!NaU"))  # 1095
+print(alienNumbers("aaaUUU"))  # 129
+print(alienNumbers(""))  # 0
+
+# 7. Test case 2.7 alienNumbersAgain
+print(alienNumbersAgain("a!ya!U!NaU"))  # 1095
+print(alienNumbersAgain("aaaUUU"))  # 129
+print(alienNumbersAgain(""))  # 0
+
+# 8. Test case 2.8 encrypt
+print(encrypt("Hello, world"))  # 'dHlerlolwo ,'
+print(encrypt("1234"))  # '4132'
+print(encrypt("12345"))  # '51423'
+print(encrypt("1"))  # '1'
+print(encrypt("123"))  # '312'
+print(encrypt("12"))  # '21'
+print(encrypt("Secret Message"))  # 'eSgeacsrseetM '
+print(encrypt(",'4'r"))  # "r,''4"
+
+# 9. Test case 2.9 oPify
+print(oPify("aa"))  # 'aopa'
+print(oPify("aB"))  # 'aoPB'
+print(oPify("ooo"))  # 'oopoopo'
+print(oPify("ax1"))  # 'aopx1'
+print(oPify("abcdef22"))  # 'aopbopcopdopeopf22'
+print(oPify("aBCdef22x"))  # 'aoPBOPCOpdopeopf22x'
+print(oPify("x"))  # 'x'
+print(oPify("123456"))  # '123456'
+
+# 10. Test case 2.10 nonrepetitive
+print(nonrepetitive(""))  # True
+print(nonrepetitive("a"))  # True
+print(nonrepetitive("zrtzghtghtghtq"))  # False
+print(nonrepetitive("abcab"))  # True
+print(nonrepetitive("12341341"))  # False
+print(nonrepetitive("44"))  # False

@@ -1,0 +1,91 @@
+def split_tester(N, d):
+    d = int(d)  # Convert d to an integer for slicing purposes
+    length_N = len(N)
+    
+    if length_N % d != 0:
+        print(f"Error: The split size {d} does not divide the length of {N} ({length_N}) evenly.")
+        return False
+    
+    # Initialize a variable to track the previous piece for comparison
+    previous_piece = None
+    i = 0
+    
+    # Loop through the string, slicing it into pieces of length 'd'
+    while i < length_N:
+        piece = N[i:i + d]
+
+        # Print the pieces separated by a comma (no lists used, purely strings)
+        if i > 0:
+            print(", ", end="")
+        print(piece, end="")
+        
+        # Convert the current piece to an integer for comparison
+        current_piece = int(piece)
+
+        # Check if the sequence is increasing
+        if previous_piece is not None and current_piece <= previous_piece:
+            print()  # Add a newline after the sequence printing
+            return False  # Return False if the sequence is not strictly increasing
+        
+        # Update previous_piece for the next comparison
+        previous_piece = current_piece
+        i += d  # Increment the index by the split size
+    
+    print()  # Newline after printing the entire sequence
+    return True  # Return True if the sequence is strictly increasing
+
+
+def main():
+    # Step 0: Greeting the user
+    print("************************************************")
+    print("*                                             *")
+    print("* __Welcome to my increasing-splits tester__  *")
+    print("*                                             *")
+    print("************************************************")
+
+    # Ask for the user's name
+    name = "Doctor Avrana Kern"  # Hardcoded name for this example
+
+    print(f"*********************************************************************")
+    print(f"*                                                                   *")
+    print(f"* __{name}, welcome to my increasing-splits tester.__  *")
+    print(f"*                                                                   *")
+    print(f"*********************************************************************")
+
+    # Test cases provided by you
+    test_cases = [
+        ("12311234", "2"),
+        ("12311234", "4"),
+        ("0012311234", "2"),
+        ("0012311234", "5"),
+        ("1", "1"),
+        ("734", "1"),
+        ("734", "3")
+    ]
+
+    # Loop through the test cases
+    for N, d in test_cases:
+        print(f"{name}, would you like to test if a number admits an increasing-split of give size? yes")
+        print("Good choice!")
+        print(f"Enter a positive integer: {N}")
+        print(f"Input the split. The split has to divide the length of {N} i.e. {len(N)}")
+        print(d)
+
+        # Call split_tester to check if the sequence is strictly increasing
+        is_increasing = split_tester(N, d)
+
+        # Report the result
+        if is_increasing:
+            print("The sequence is increasing")
+        else:
+            print("The sequence is not increasing")
+
+    print(f"**************************************")
+    print(f"*                                    *")
+    print(f"* __Good bye {name}!__  *")
+    print(f"*                                    *")
+    print(f"**************************************")
+
+
+if __name__ == "__main__":
+    main()

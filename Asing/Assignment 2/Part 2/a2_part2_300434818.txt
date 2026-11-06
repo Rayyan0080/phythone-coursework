@@ -1,0 +1,13 @@
+(0, 0)
+(5.5, -2.5)
+None
+(500, 1500)
+1.0
+0.6666666666666666
+0.5555555555555556
+0.4444444444444444
+(7, 8.0)
+(9, 4.0)
+Enter the yes, no, abstained votes one by one and then press enter:
+yes
+proposal passes unanimously
